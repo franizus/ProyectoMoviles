@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "140326438844",
+    "firebase_url": "https://proyectomoviles-401d9.firebaseio.com",
+    "project_id": "proyectomoviles-401d9",
+    "storage_bucket": "proyectomoviles-401d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140326438844:android:89e6727116145640",
+        "android_client_info": {
+          "package_name": "com.example.frani.proyectomoviles"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140326438844-pvdc96q5alud42bspvqo9oajveuoaggb.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "140326438844-pvdc96q5alud42bspvqo9oajveuoaggb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZmbXLt3C6JimMwD9b41Zrq1MyFQ30LB4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
