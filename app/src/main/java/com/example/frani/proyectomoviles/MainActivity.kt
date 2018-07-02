@@ -1,9 +1,11 @@
 package com.example.frani.proyectomoviles
 
+import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
@@ -23,8 +25,10 @@ class MainActivity : AppCompatActivity() {
 
         loadSpinner()
 
-        btnTranslate.setOnClickListener{
-            v: View? ->  translate(editTextFrom.text.toString())
+        btnTranslate.setOnClickListener{ v: View? ->
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(editTextFrom.windowToken, 0)
+            translate(editTextFrom.text.toString())
         }
     }
 
