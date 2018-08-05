@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Translator</string>
+    <string name="title_home">Home</string>
+    <string name="title_history">History</string>
+    <string name="title_text">Text</string>
+    <string name="title_camera">Camera</string>
+    <string name="title_voice">Voice</string>
+    <string name="entry">Entry</string>
+    <string name="menu_delete">Delete</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="confirmation">Are you sure you want to delete?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

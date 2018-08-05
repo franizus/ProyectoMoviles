@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- TODO: Update blank fragment layout -->
     <EditText
         android:id="@+id/editTextFrom"
         android:layout_width="372dp"
@@ -18,7 +19,7 @@
         android:background="@drawable/textinputborder"
         android:ems="10"
         android:gravity="top"
-        android:hint="From"
+        android:hint="@string/from"
         android:inputType="textMultiLine"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +39,7 @@
         android:background="@drawable/textinputborder"
         android:ems="10"
         android:gravity="top"
-        android:hint="To"
+        android:hint="@string/to"
         android:inputType="textMultiLine"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -57,7 +58,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="140dp"
         android:layout_marginTop="16dp"
-        android:text="Translate"
+        android:text="@string/translate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.939"
         app:layout_constraintStart_toStartOf="parent"

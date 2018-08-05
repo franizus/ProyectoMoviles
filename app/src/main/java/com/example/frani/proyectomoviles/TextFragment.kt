@@ -1,35 +1,43 @@
 package com.example.frani.proyectomoviles
 
 import android.content.Context
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
+import android.widget.Button
 import com.beust.klaxon.JsonArray
 import com.beust.klaxon.JsonObject
 import com.beust.klaxon.Parser
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.core.FuelManager
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_text.*
 
-class MainActivity : AppCompatActivity() {
+class TextFragment : Fragment() {
 
     val languageMap: MutableMap<String, String> = mutableMapOf()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        var rootView = inflater.inflate(R.layout.fragment_text, container, false)
+
         FuelManager.instance.basePath = "https://api.cognitive.microsofttranslator.com"
 
         loadSpinner()
 
-        btnTranslate.setOnClickListener{ v: View? ->
-            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        var btn1 = rootView.findViewById<Button>(R.id.btnTranslate)
+
+        btn1.setOnClickListener{
+            val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(editTextFrom.windowToken, 0)
             translate(editTextFrom.text.toString())
         }
+
+        return rootView
     }
 
     fun loadSpinner() {
@@ -47,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                 languagesList.add(name)
             }
             val adapterSpinner = ArrayAdapter<String>(
-                    this,
+                    activity,
                     android.R.layout.simple_spinner_item,
                     languagesList
             )

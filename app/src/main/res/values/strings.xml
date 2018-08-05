@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">ProyectoMoviles</string>
+    <string name="app_name">Traductor</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_history">Historial</string>
+    <string name="title_text">Texto</string>
+    <string name="title_camera">Camara</string>
+    <string name="title_voice">Voz</string>
+
+    <string name="from">De</string>
+    <string name="to">A</string>
+    <string name="translate">Traducir</string>
+    <string name="entry">Entrada</string>
+    <string name="menu_delete">Borrar</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+    <string name="confirmation">Seguro desea eliminar?</string>s
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
 </resources>
