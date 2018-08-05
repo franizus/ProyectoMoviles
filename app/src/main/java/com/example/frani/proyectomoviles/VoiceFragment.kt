@@ -91,6 +91,7 @@ class VoiceFragment : Fragment() {
             val translations = jsonArr["translations"] as JsonArray<JsonObject>
             val textT = translations.string("text")[0]
             editTextToVoice.setText(textT)
+            DBHistory.insertarHistory(History(0, text, textT!!, Factory.user?.id!!))
         }
     }
 

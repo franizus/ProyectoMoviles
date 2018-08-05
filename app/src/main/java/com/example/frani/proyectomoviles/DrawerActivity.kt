@@ -6,15 +6,17 @@ import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.NavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
-import android.support.v7.app.ActionBarDrawerToggle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
-import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import kotlinx.android.synthetic.main.content_drawer.*
 import kotlinx.android.synthetic.main.activity_drawer.*
 import kotlinx.android.synthetic.main.app_bar_drawer.*
 
 class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    lateinit var dbHandler: DBUserHandlerAplicacion
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -38,6 +40,16 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drawer)
         setSupportActionBar(toolbar)
+
+        dbHandler = DBUserHandlerAplicacion(this)
+        var user = dbHandler.getUser()
+        Factory.user = user
+
+        val headerView = nav_view.getHeaderView(0)
+        val navname = headerView.findViewById<TextView>(R.id.navheaderName)
+        navname.text = "${user?.nombre} ${user?.apellido}"
+        val navemail = headerView.findViewById<TextView>(R.id.navheaderEmail)
+        navemail.text = user?.email
 
         nav_view.menu.getItem(0).setChecked(true)
         nav_view.setNavigationItemSelectedListener(this)
@@ -69,11 +81,21 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             R.id.nav_history -> {
                 irActivityHistory()
             }
-            R.id.nav_share -> {
-
+            R.id.nav_profile -> {
+                irActivityProfile()
             }
-            R.id.nav_send -> {
-
+            R.id.nav_logout -> {
+                val builder = AlertDialog.Builder(this)
+                builder.setMessage(R.string.confirmation_session)
+                        .setPositiveButton(R.string.yes, { dialog, which ->
+                            dbHandler.deleteUser(1)
+                            irActivityLogin()
+                            finish()
+                        }
+                        )
+                        .setNegativeButton(R.string.no, null)
+                val dialogo = builder.create()
+                dialogo.show()
             }
         }
 
@@ -81,8 +103,18 @@ class DrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         return true
     }
 
+    private fun irActivityLogin() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+    }
+
     private fun irActivityHistory() {
         val intent = Intent(this, HistoryActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun irActivityProfile() {
+        val intent = Intent(this, ProfileActivity::class.java)
         startActivity(intent)
     }
 

@@ -3,10 +3,15 @@ package com.example.frani.proyectomoviles
 import android.os.Parcel
 import android.os.Parcelable
 
-class User(var id: Int, var nombre: String, var apellido: String, var email: String): Parcelable {
+class User(var id: Int,
+           var nombre: String,
+           var apellido: String,
+           var email: String,
+           var password: String): Parcelable {
 
     constructor(parcel: Parcel) : this(
             parcel.readInt(),
+            parcel.readString(),
             parcel.readString(),
             parcel.readString(),
             parcel.readString()) {
@@ -21,6 +26,7 @@ class User(var id: Int, var nombre: String, var apellido: String, var email: Str
         destino?.writeString(nombre)
         destino?.writeString(apellido)
         destino?.writeString(email)
+        destino?.writeString(password)
     }
 
     companion object CREATOR : Parcelable.Creator<User> {

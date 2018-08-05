@@ -7,20 +7,20 @@ import android.database.sqlite.SQLiteOpenHelper
 
 class DBUser {
     companion object {
-        val DB_NAME = "user"
+        val DB_NAME = "USER"
         val TABLE_NAME = "users"
         val CAMPO_ID = "id"
+        val ID = "idAPI"
         val CAMPO_NOMBRE = "nombre"
         val CAMPO_APELLIDO = "apellido"
         val CAMPO_EMAIL = "email"
     }
 }
 
-class DBAutorHandlerAplicacion(context: Context) : SQLiteOpenHelper(context, DBUser.DB_NAME, null, 1) {
+class DBUserHandlerAplicacion(context: Context) : SQLiteOpenHelper(context, DBUser.DB_NAME, null, 1) {
 
     override fun onCreate(db: SQLiteDatabase?) {
-
-        val createTableSQL = "CREATE TABLE ${DBUser.TABLE_NAME} (${DBUser.CAMPO_ID} INTEGER PRIMARY KEY, ${DBUser.CAMPO_NOMBRE} VARCHAR(50),${DBUser.CAMPO_APELLIDO} VARCHAR(50),${DBUser.CAMPO_EMAIL} VARCHAR(50))"
+        val createTableSQL = "CREATE TABLE ${DBUser.TABLE_NAME} (${DBUser.CAMPO_ID} INTEGER PRIMARY KEY, ${DBUser.ID} INTEGER, ${DBUser.CAMPO_NOMBRE} VARCHAR(50),${DBUser.CAMPO_APELLIDO} VARCHAR(50),${DBUser.CAMPO_EMAIL} VARCHAR(50))"
         db?.execSQL(createTableSQL)
     }
 
@@ -32,6 +32,8 @@ class DBAutorHandlerAplicacion(context: Context) : SQLiteOpenHelper(context, DBU
         val dbWriteable = writableDatabase
         val cv = ContentValues()
 
+        cv.put(DBUser.CAMPO_ID, 1)
+        cv.put(DBUser.ID, user.id)
         cv.put(DBUser.CAMPO_NOMBRE, user.nombre)
         cv.put(DBUser.CAMPO_APELLIDO, user.apellido)
         cv.put(DBUser.CAMPO_EMAIL, user.email)
@@ -55,12 +57,12 @@ class DBAutorHandlerAplicacion(context: Context) : SQLiteOpenHelper(context, DBU
 
         if (resultado.moveToFirst()) {
             do {
-                val id = resultado.getString(0).toInt()
-                val nombre = resultado.getString(1)
-                val apellido = resultado.getString(2)
-                val email = resultado.getString(3)
+                val id = resultado.getString(1).toInt()
+                val nombre = resultado.getString(2)
+                val apellido = resultado.getString(3)
+                val email = resultado.getString(4)
 
-                user = User(id, nombre, apellido, email)
+                user = User(id, nombre, apellido, email, "")
             } while (resultado.moveToNext())
         }
 

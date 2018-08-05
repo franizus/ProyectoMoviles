@@ -19,7 +19,7 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
 
-        historyList = DBHistory.getHistoryList(1)
+        historyList = DBHistory.getHistoryList(Factory.user?.id!!)
 
         val layoutManager = LinearLayoutManager(this)
         adaptador = HistoryAdapter(historyList)

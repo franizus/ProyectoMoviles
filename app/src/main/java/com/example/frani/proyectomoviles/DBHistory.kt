@@ -4,6 +4,7 @@ import android.util.Log
 import android.os.StrictMode
 import com.beust.klaxon.*
 import com.github.kittinunf.fuel.*
+import com.github.kittinunf.fuel.core.FuelManager
 
 
 class DBHistory {
@@ -11,9 +12,11 @@ class DBHistory {
     companion object {
 
         fun insertarHistory(history: History) {
+            FuelManager.instance.baseHeaders = mapOf()
             "http://40.117.248.211/History".httpPost(listOf("text" to history.text, "translatedText" to history.translatedText, "language" to "", "translatedLanguage" to "", "userId" to history.userId))
                     .responseString { request, _, result ->
-                        Log.d("http-ejemplo", request.toString())
+                        Log.d("http-ejemplo", request.cUrlString())
+                        Log.d("http-ejemplo", result.toString())
                     }
         }
 

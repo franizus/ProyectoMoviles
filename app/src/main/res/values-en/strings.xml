@@ -10,6 +10,24 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="confirmation">Are you sure you want to delete?</string>
+    <string name="confirmation_session">Are you sure you want to logout?</string>
+
+    <string name="name">Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login_button">Login</string>
+    <string name="registration_button">Create Account</string>
+    <string name="to_login">Already a member? Login</string>
+    <string name="to_registration">No account yet? Create one</string>
+    <string name="email_error">Enter a valid email address</string>
+    <string name="password_error">Password field can\'t be empty</string>
+    <string name="login_error">Login error</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="session">Session</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

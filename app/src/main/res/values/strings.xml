@@ -13,7 +13,25 @@
     <string name="menu_delete">Borrar</string>
     <string name="yes">Si</string>
     <string name="no">No</string>
-    <string name="confirmation">Seguro desea eliminar?</string>s
+    <string name="confirmation">Seguro desea eliminar?</string>
+    <string name="confirmation_session">Seguro desea cerrar sesion?</string>
+
+    <string name="name">Nombre</string>
+    <string name="last_name">Apellido</string>
+    <string name="email">Correo Electronico</string>
+    <string name="password">Contraseña</string>
+    <string name="login_button">Iniciar Sesion</string>
+    <string name="registration_button">Crear Cuenta</string>
+    <string name="to_login">Ya tiene cuenta? Inicie sesion</string>
+    <string name="to_registration">Aun no tiene cuenta? Cree una</string>
+    <string name="email_error">Ingrese un correo electronico valido</string>
+    <string name="password_error">El campo contraseña no puede estar vacio</string>
+    <string name="login_error">Error en inicio de sesion</string>
+    <string name="profile">Perfil</string>
+    <string name="logout">Cerrar sesion</string>
+    <string name="session">Sesion</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Borrar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

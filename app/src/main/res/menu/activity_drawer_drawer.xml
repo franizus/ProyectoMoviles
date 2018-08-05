@@ -14,16 +14,16 @@
             android:title="@string/title_history" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/session">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_profile"
                 android:icon="@drawable/user"
-                android:title="Share" />
+                android:title="@string/profile" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_logout"
                 android:icon="@drawable/logout"
-                android:title="Send" />
+                android:title="@string/logout" />
         </menu>
     </item>
 
