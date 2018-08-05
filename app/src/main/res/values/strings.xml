@@ -10,12 +10,14 @@
     <string name="to">A</string>
     <string name="translate">Traducir</string>
     <string name="entry">Entrada</string>
+    <string name="menu_share">Compartir</string>
     <string name="menu_delete">Borrar</string>
     <string name="yes">Si</string>
     <string name="no">No</string>
     <string name="confirmation">Seguro desea eliminar?</string>
     <string name="confirmation_session">Seguro desea cerrar sesion?</string>
 
+    <string name="user">Usuario</string>
     <string name="name">Nombre</string>
     <string name="last_name">Apellido</string>
     <string name="email">Correo Electronico</string>
@@ -26,7 +28,11 @@
     <string name="to_registration">Aun no tiene cuenta? Cree una</string>
     <string name="email_error">Ingrese un correo electronico valido</string>
     <string name="password_error">El campo contraseña no puede estar vacio</string>
+    <string name="name_error">El campo nombre no puede estar vacio</string>
+    <string name="lastname_error">El campo apellido no puede estar vacio</string>
     <string name="login_error">Error en inicio de sesion</string>
+    <string name="signup_error">Error en creacion de cuenta</string>
+    <string name="signup">Cuenta creada correctamente!</string>
     <string name="profile">Perfil</string>
     <string name="logout">Cerrar sesion</string>
     <string name="session">Sesion</string>

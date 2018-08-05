@@ -34,6 +34,7 @@ class HistoryAdapter(private val historyList: List<History>) : RecyclerView.Adap
         }
 
         override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
+            menu?.add(Menu.NONE, R.id.item_menu_share, Menu.NONE, R.string.menu_share)
             menu?.add(Menu.NONE, R.id.item_menu_delete, Menu.NONE, R.string.menu_delete)
         }
     }
@@ -48,7 +49,8 @@ class HistoryAdapter(private val historyList: List<History>) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val history = historyList[position]
-        holder.id.text = "${context?.getString(R.string.entry)} ${history.id}"
+        val entry = position + 1
+        holder.id.text = "${context?.getString(R.string.entry)} $entry"
         holder.text.setText(history.text)
         holder.translatedText.setText(history.translatedText)
         holder.itemView.setOnLongClickListener {

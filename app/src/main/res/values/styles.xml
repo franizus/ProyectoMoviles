@@ -8,6 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="buttonBlueStyle">
+        <item name="android:background">#4285F4</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="buttonRedStyle">
+        <item name="android:background">#ee2b31</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
     <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

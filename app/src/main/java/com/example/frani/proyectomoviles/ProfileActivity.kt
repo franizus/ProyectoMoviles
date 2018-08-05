@@ -27,6 +27,9 @@ class ProfileActivity : AppCompatActivity() {
 
         btnEditProfile.setOnClickListener{
             val user = Factory.user!!
+            user.nombre = editTextNameProfile.text.toString()
+            user.apellido = editTextLastnameProfile.text.toString()
+            user.email = editTextEmailProfile.text.toString()
             user.password = editTextPasswordProfile.text.toString()
             DBUserAPI.updateUser(user)
             finish()

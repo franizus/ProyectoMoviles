@@ -1,5 +1,6 @@
 package com.example.frani.proyectomoviles
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -47,6 +48,14 @@ class HistoryActivity : AppCompatActivity() {
         var history = historyList[position]
 
         when (item.itemId) {
+            R.id.item_menu_share -> {
+                val intent = Intent(Intent.ACTION_SEND)
+                intent.type = "text/html"
+                intent.putExtra(Intent.EXTRA_SUBJECT, "${getString(R.string.app_name)} - ${getString(R.string.entry)} ${history.id}")
+                intent.putExtra(Intent.EXTRA_TEXT, "${getString(R.string.user)}: ${Factory.user?.nombre} ${Factory.user?.apellido}\n${getString(R.string.from)}: ${history.text}\n${getString(R.string.to)}: ${history.translatedText}")
+                startActivity(intent)
+                return true
+            }
             R.id.item_menu_delete -> {
                 val builder = AlertDialog.Builder(this)
                 builder.setMessage(R.string.confirmation)

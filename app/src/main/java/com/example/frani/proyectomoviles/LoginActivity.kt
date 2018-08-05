@@ -25,6 +25,10 @@ class LoginActivity : AppCompatActivity() {
         btn_login.setOnClickListener{
             login()
         }
+
+        link_signup.setOnClickListener {
+            irActivityRegistration()
+        }
     }
 
     fun login() {
@@ -52,6 +56,11 @@ class LoginActivity : AppCompatActivity() {
 
     fun irActivityDrawer() {
         val intent = Intent(this, DrawerActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun irActivityRegistration() {
+        val intent = Intent(this, RegistrationActivity::class.java)
         startActivity(intent)
     }
 
